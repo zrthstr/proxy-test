@@ -25,12 +25,12 @@ jobs:
           sudo sed -i -e '1s!^{!\{ "ipv6": true, "fixed-cidr-v6": "fd00::/80",!' /etc/docker/daemon.json || echo '{ "ipv6": true, "fixed-cidr-v6": "fd00::/80" }' | sudo tee /etc/docker/daemon.json
           sudo systemctl restart docker
 
-      - name: Login to quay.io
-        uses: docker/login-action@0d4c9c5ea7693da7b068278f7b52bda2a190a446 # v3.2.0
-        with:
-          registry: quay.io
-          username: ${{ secrets.QUAY_ENVOY_USERNAME }}
-          password: ${{ secrets.QUAY_ENVOY_PASSWORD }}
+#      - name: Login to quay.io
+#        uses: docker/login-action@0d4c9c5ea7693da7b068278f7b52bda2a190a446 # v3.2.0
+#        with:
+#          registry: quay.io
+#          username: ${{ secrets.QUAY_ENVOY_USERNAME }}
+#          password: ${{ secrets.QUAY_ENVOY_PASSWORD }}
 
       - name: Checkout source
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
