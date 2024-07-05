@@ -45,6 +45,9 @@ jobs:
           echo "BAZEL_VERSION=$(cat .bazelversion)" >> $GITHUB_ENV
           echo "BUILDER_DOCKER_HASH=$(git ls-tree --full-tree HEAD -- ./Dockerfile.builder.tests | awk '{ print $3 }')" >> $GITHUB_ENV
           echo OKOKOKOK
+          echo $PATH
+          cat .bazelversion
+          which docker
 
       - name: Checking if cilium-envoy-builder:test image exists
         id: cilium-builder-test-tag-in-repositories
