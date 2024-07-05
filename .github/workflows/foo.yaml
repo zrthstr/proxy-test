@@ -1,0 +1,20 @@
+name: Check Working Directory
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-pwd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print working directory
+        run: pwd
+
+      - name: List contents of working directory
+        run: ls -la
